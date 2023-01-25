@@ -1,6 +1,6 @@
 const cardsContainer = document.querySelector('.cards');
 const btnOpenPopupForm = document.querySelector('#add');
-// const btnClosePopupForm = document.querySelector('#close-btn');
+const btnClosePopupForm = document.querySelector('#close-btn');
 const formAddDog = document.querySelector('#popup-form-dog');
 const popupAddDog = new Popup('popup-add-dogs');
 popupAddDog.setEventListener();
@@ -24,9 +24,9 @@ dogs.forEach((dog) => {
 createDog(dog);
 });
 
-// btnOpenPopupForm.addEventListener('click', () => popupAddDog.open());
-// // btnClosePopupForm.addEventListener('click', () => popupAddDog.close());
-//  formAddDog.addEventListener('submit', handleFormAddDog);
+btnOpenPopupForm.addEventListener('click', () => popupAddDog.open());
+btnClosePopupForm.addEventListener('click', () => popupAddDog.close());
+ formAddDog.addEventListener('submit', handleFormAddDog);
 
 
 
