@@ -1,9 +1,9 @@
 function createDog(data) {
-  const cardInstance = new Card(data, '#card-template');
+  const cardInstance = new Card(data, '#card-template', onClickToEdit);
   const newCardElement = cardInstance.getElement();
   cardsContainer.append(newCardElement);
 }
-
+  // функция, которая будет доставать value из html разметки формы, которую ввел пользователь
 function serializeForm(elements) {
   const formData = {};
   elements.forEach((input) => {
@@ -19,9 +19,6 @@ function serializeForm(elements) {
   });
   return formData;
 }
-  
-  // функция, которая будет доставать value из html разметки формы, которую ввел пользователь
- 
   
   // длинная форма =>  formData[input.name] = input.value;
   // if (input.name === 'age') {

@@ -81,9 +81,9 @@ const configApi = {
   //   image: 'https://http.cat/100',
   // };
   
-  // api.getAllDogs({});
-  // api.getAllDogsId();
-  // // api.getDogById(9);
+  api.getAllDogs({});
+  api.getAllDogsId();
+  // api.getDogById(9);
   // api.addNewDog(newDog)
   // api.updateDogById(9, newDogUpdated)
   
