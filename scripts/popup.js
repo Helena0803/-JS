@@ -26,27 +26,24 @@ class Popup {
   }
 
   setContent(content, id) {
-    //  console.log({ content });
+  //  console.log({ content });
     const cardImage = content.querySelector('.card__image').src;
     const cardLink = content.querySelector('.card__link').textContent;
     const elements = [...document.querySelector('#popup-form-edit').elements];
-     console.log({ cardImage, cardLink });
-    // console.log({ elements });
-    // cardLink.setAttribute('id', this._data.id);
-    // const editId = null;
-    // const myDog = api.getDogById(id);
-
+   //  console.log({ cardImage, cardLink });
+  // console.log({ elements });
+    const myDogs = JSON.parse(window.localStorage.getItem("dogs"));
+    const myDog = myDogs.find((el) => el.id === id);
+  
         elements.forEach((input) => {
       // console.log(input);
       if (input.type === 'submit') return;
-
       if (input.name === 'id') {
         input.value = id;
         return (input.disabled = true);
       }
-      if (input.type !== 'checkbox') input.value = '';
-      // if (input.type !== 'checkbox') input.value = myDog[input.name];
-      if (input.type === 'checkbox') input.checked = true;
+      if (input.type !== 'checkbox') input.value = myDog[input.name];
+      if (input.type === 'checkbox') input.checked = myDog.favorite;
     });
     this.data = content;
   }

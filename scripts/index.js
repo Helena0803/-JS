@@ -62,20 +62,10 @@ localStorage.setItem('dogsRefresh', setTime);
    popupAddDog.close();
 }
 
-
-// function deleteDog(dog) {
-//   console.log(dog);
-  ///
-
-  // api.deleteDogById(dog.id);
-// }
-
-
-
 // api.getAllDogs().then((data) =>
 //   data.forEach((dog) => {
 //     createDog(dog);
-//     const btnDelete = document.addEventListener('click', () =>
+//     const btnDel = document.addEventListener('click', () =>
 //       deleteDog(dog)
 //     );
 //   })
@@ -108,7 +98,7 @@ formEditDog.addEventListener('submit', (e) => handleFormAddDog(e, true));
             createDog(dog);
           });
         });
-       updateLocalStorage(dogs, {type: 'ALL_DOGS'});
+      //  updateLocalStorage(dogs, {type: 'ALL_DOGS'});
         const setTime = new Date(new Date().getTime() + 5000);
         localStorage.setItem('dogsRefresh', setTime);
       }

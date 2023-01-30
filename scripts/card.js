@@ -50,7 +50,7 @@ class Card {
   
       cardTitle.textContent = this._data.name ?? 'Рокки';
       cardImage.src = this._data.image;
-      // cardImage.src = dog.image;
+    
 
   
       cardLink.addEventListener('click',() => {
