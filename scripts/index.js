@@ -12,7 +12,6 @@ popupEditDog.setEventListener();
 
 // console.log({popupAddDog});
 
-
 // const cardInstance = new Card(dog[0], '#card-template');
 // const newCardElement = cardInstance.getElement();
 // cardsContainer.append(newCardElement);
@@ -36,30 +35,29 @@ createDog(dog);
 // c данными из этой формы
 // данные по структуре будут иметь те же ключи, что и в массиве dogs.js
 function handleFormAddDog(e, isEdit) {
-  e.preventDefault();
+  // e.preventDefault();
 //   console.log(formAddDog.elements);
 if (isEdit) {
   const elementsFormDog = [...formEditDog.elements];
   const dataFromForm = serializeForm(elementsFormDog);
-  console.log({ dataFromForm });
+  // console.log({ dataFromForm });
   api.updateDogById(dataFromForm.id, dataFromForm);
-  return popupEditDog.close();
+     return popupEditDog.close();
 }
  const elementsFormDog = [...formAddDog.elements];
  const dataFromForm = serializeForm(elementsFormDog);
  api.addNewDog(dataFromForm);
  createDog(dataFromForm);
-createDog(dataFromForm);
 const oldStorage = JSON.parse(localStorage.getItem('dogs'));
 oldStorage.push(dataFromForm);
 localStorage.setItem('dogs', JSON.stringify(oldStorage));
 const setTime = new Date(new Date().getTime() + 6000);
 localStorage.setItem('dogsRefresh', setTime);
-// updateLocalStorage(dogs, {type: 'ADD_DOG'});
+updateLocalStorage(dogs, {type: 'ADD_DOG'});
  popupAddDog.close();
   
-  createDog(dataFromForm);
-   popupAddDog.close();
+  // createDog(dataFromForm);
+  //  popupAddDog.close();
 }
 
 // api.getAllDogs().then((data) =>
@@ -103,13 +101,15 @@ formEditDog.addEventListener('submit', (e) => handleFormAddDog(e, true));
         localStorage.setItem('dogsRefresh', setTime);
       }
     }
-    function onClickToEdit(card, id) {
-      console.log({ card, id });
-      popupEditDog.setContent(card, id,);
+
+    function onClickToEdit(card, id, image) {
+      console.log({ card, id, image});
+      popupEditDog.setContent(card, id, image);
       popupEditDog.open(card);
-    }
+        }
     
     checkLocalStorage()
+    
 // document.cookie = "Luck=IamYourFather";
 // Cookies.set('YourName', 'DifferentValue');
 // console.log(Cookies.get('YourName'));
@@ -120,6 +120,6 @@ formEditDog.addEventListener('submit', (e) => handleFormAddDog(e, true));
 // localStorage.setItem('test1', 'value1');
 // localStorage.setItem('dogs', JSON.stringify(dogs));
 
-// const result = JSON.parse(localStorage.getItem('dogs'));
-// console.log(result.map((e) => ({...e, name: `${e.name}  +  edited`})));
-// sessionStorage.setItem('dogs',JSON.stringify([{name: 'Dog'}, {name: 'Dog2'}]));
+const result = JSON.parse(localStorage.getItem('dogs'));
+console.log(result.map((e) => ({...e, name: `${e.name}  +  edited`})));
+sessionStorage.setItem('dogs',JSON.stringify([{name: 'Dog'}, {name: 'Dog2'}]));

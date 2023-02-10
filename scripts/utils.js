@@ -8,13 +8,14 @@ function serializeForm(elements) {
   const formData = {};
   elements.forEach((input) => {
     console.log(input.name);
-    //  console.log(input.type);
-    if (input.type === 'submit') return;
+     console.log(input.type);
+    if (input.type === 'submit') return formData;
     if (input.type !== 'checkbox') {
       formData[input.name] = input.value;
     }
     if (input.type === 'checkbox') {
       formData[input.name] = input.checked;
+
     }
   });
   return formData;

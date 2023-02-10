@@ -4,11 +4,14 @@
     gap: 20px;
   }
   
-  .form__image {
+  .form__image, .form__image-edit {
     grid-row: span 3;
     background-image: url("../../assets/image/britanskaya-korotkosherstnaya-2291.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    width: 173px;
+    height: 138px;
+    contain: cover;
   }
   
   .form__textarea {

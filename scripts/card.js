@@ -1,10 +1,7 @@
 // const card = document.querySelector('#tmp-card');
 // const template = document.querySelector('#card-template').content;
-
 //  console.log({ card });
 //  console.log({ template });
-
-
 
 class Card {
     constructor(dataDog, selectorTemplate, onClickToEdit) {
@@ -51,10 +48,9 @@ class Card {
       cardTitle.textContent = this._data.name ?? 'Рокки';
       cardImage.src = this._data.image;
     
-
   
       cardLink.addEventListener('click',() => {
-        this.onClickToEdit(this.element, this._data.id)
+        this.onClickToEdit(this.element, this._data.id,this._data.image)
       })
       return this.element;
     }

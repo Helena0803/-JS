@@ -49,11 +49,11 @@ const configApi = {
         body: JSON.stringify(body),
       }).then(this._onResponse);
     }
-    updateDogById(id, data) {
+    updateDogById(id, body) {
       return fetch(`${this._url}/update/${id}`, {
         method: 'PUT',
         headers: this._headers,
-        body: JSON.stringify(data),
+        body: JSON.stringify(body),
       }).then(this._onResponse);
     }
     deleteDogById(id) {
@@ -63,7 +63,7 @@ const configApi = {
       }).then(this._onResponse);
     }
   }
-   const api = new Api(configApi);
+    const api = new Api(configApi);
   // console.log(api);
   
   // const newDog = {
@@ -81,10 +81,10 @@ const configApi = {
   //   image: 'https://http.cat/100',
   // };
   
-  api.getAllDogs({});
-  api.getAllDogsId();
+  // api.getAllDogs({});
+  // api.getAllDogsId();
   // api.getDogById(9);
   // api.addNewDog(newDog)
   // api.updateDogById(9, newDogUpdated)
   
-  // api.deleteCatById(9);
+  
